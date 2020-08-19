@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            background-color: #b8c0c8;
+        }
+        #text_editor_area{
+            
+            margin-top: 300 px;
+            height:500px;
+            background-color:#ffffff}
+
+            #button1{
+    background-color:#3e3d53;
+	   color: honeydew;
+	   
+	   cursor: pointer;
+	   font-size: 20px;
+	
+	  
+	   padding: 14px 20px;
+	   margin: 8px 0;
+	   border: none;
+	   border-radius: 4px;
+
+}
+#fontselector{
+    background-color:#3e3d53;
+    color: honeydew;
+	   cursor: pointer;
+	   font-size: 20px;
+	   padding: 14px 20px;
+	   margin: 8px 0;
+	   border: none;
+	   border-radius: 4px;
+
+}
+#colorselector{
+    background-color:#3e3d53;
+    color: honeydew;
+	   cursor: pointer;
+	   font-size: 20px;
+	   padding: 14px 20px;
+	   margin: 8px 0;
+	   border: none;
+	   border-radius: 4px;
+
+}
+#sizeselector{
+    background-color:#3e3d53;
+    color: honeydew;
+	   cursor: pointer;
+	   font-size: 20px;
+	   padding: 14px 20px;
+	   margin: 8px 0;
+	   border: none;
+	   border-radius: 4px;
+
+}
+
+
+    </style>
+</head>
+<body  >
+    
+    <button  id = "button1" onclick = "document.execCommand('bold',false,null);">bold</button>
+    <button  id = "button1" onclick = "document.execCommand('italic',false,null);">italic</button>
+    <button  id = "button1" onclick = "document.execCommand('underline',false,null);">underline</button>
+    <button id = "button1" onclick = "document.execCommand('undo',false, null);">Undo</button>
+    <button id = "button1" onclick = "document.execCommand('redo',false, null);">redo</button>
+    <select onchange="fontstyle();" id="fontselector">
+        <option value ="Arial">Arial</option>
+        <option value="Helvetica">Helvetica</option>
+        <option value = "palatino"> palatino</option>
+        <option value = "DejaVu Sans Mono">DejaVu Sans Mono </option>
+        <option value = "georgia">georgia</option>
+        <option value = "Bookman">Bookman </option>
+        <option value = "Didot">Didot </option>
+        <option value = "Verdana">Verdana </option>
+        <option value = "Comic sans MS ">Comic sans MS</option>
+    </select>
+    <select onchange="fontsize();" id = "sizeselector">
+        <option value ="1">1</option>
+        <option value ="2">2</option>
+        <option value ="3">3</option>
+        <option value ="4">4</option>
+        <option value ="5">5</option>
+        <option value ="6">6</option>
+        <option value ="7">7</option>
+
+    </select>
+    <select onchange = "fontcolor();" id = "colorselector">
+        <option value = "#FF0000">Red</option>
+        <option value = "#00FF00">green</option>
+        <option value = "#0000FF">blue</option>
+        <option value = "#FFFF00">yellow</option>
+        <option value = "#A52A2A">brown</option>
+        <option value = "#FFC0CB">pink</option>
+        <option value = "#EE82EE">voilet</option>
+
+
+    </select>
+    <div id = "text_editor_area" contenteditable="True">
+        enter the text here
+    </div>
+</body>
+<script>
+    //document.designMode = "on";
+    /*var button1 = document.getElementById("button1")
+    button1.addEventListener("click",boldtext(event))
+    function boldtext(event) {
+        console.log("done")
+        var textbold = document.getElementById("text_editor_area")
+        textbold.execCommand("bold");
+    }*/
+    //document.designMode = "on";
+
+
+function fontstyle(){
+    var x = document.getElementById("fontselector").value;
+    document.execCommand("fontName",false,x);}
+function fontsize(){
+    var y = document.getElementById("sizeselector").value;
+    document.execCommand("fontSize",false,y);}
+
+function fontcolor(){
+    var z = document.getElementById("colorselector").value;
+    document.execCommand("foreColor",false,z);}
+
+/*function change(event) {
+  if (event.keyCode == 16) {
+    // Execute command if user presses the SHIFT button:
+    document.execCommand("bold");
+    
+  }
+
+}*/
+</script>
+</html>
